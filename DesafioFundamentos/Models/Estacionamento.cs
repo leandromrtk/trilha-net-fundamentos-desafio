@@ -23,12 +23,12 @@ namespace DesafioFundamentos.Models
              
              if (veiculos.Contains(adicionarVeiculos))
              {
-                Console.WriteLine($"A placa do veículo {adicionarVeiculos} já existe. Cadastre outra placa!\n");
+                Console.WriteLine($"A placa do veículo {adicionarVeiculos.ToUpper()} já existe. Cadastre outra placa!\n");
              }
 
              else
              {
-                veiculos.Add(adicionarVeiculos);
+                veiculos.Add(adicionarVeiculos.ToUpper());
                 Console.WriteLine("Véículo cadastrado!\n");
              }
         }
@@ -54,13 +54,13 @@ namespace DesafioFundamentos.Models
                 int horas = int.Parse(Console.ReadLine());
                 
                 decimal valorTotal = precoInicial + precoPorHora * horas; 
-                Console.WriteLine($"O valor total a pagar é: {valorTotal:C.}");
+                Console.WriteLine($"O valor total a pagar é: {valorTotal:C}.");
                 // TODO: Remover a placa digitada da lista de veículos
                 veiculos.Remove(placa);
                 
                 // *IMPLEMENTE AQUI*
 
-                Console.WriteLine($"O veículo {placa} foi retirado e o preço total foi de: R$ {valorTotal:C.}");
+                Console.WriteLine($"O veículo de placa {placa.ToUpper()} foi retirado e o preço total foi de: R$ {valorTotal:C}.");
             }
             else
             {
